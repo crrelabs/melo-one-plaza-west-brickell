@@ -1,0 +1,14 @@
+:root{--primary:#3572b0;--primary-dark:#2a5a8a;--primary-light:#4a8fd4}
+html{scroll-behavior:smooth}
+body{font-family:'Lato',sans-serif;color:#333}
+.hero{background:url('images/oneplaza-slider-1b.jpg') center/cover no-repeat;min-height:80vh}
+.amenities-bg{background:url('images/oneplaza-pool2.jpg') center/cover no-repeat}
+.gallery-item{overflow:hidden;cursor:pointer}
+.gallery-item img{transition:transform .3s,opacity .3s}
+.gallery-item:hover img{transform:scale(1.08);opacity:.85}
+.tab-btn.active{border-color:var(--primary);color:var(--primary);background:#f0f7ff}
+.floorplan-tab.active{background:var(--primary);color:#fff}
+.nav-link{position:relative}
+.nav-link::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:2px;background:var(--primary);transition:width .3s}
+.nav-link:hover::after{width:100%}
+#mobile-menu{transition:max-height .3s ease}
