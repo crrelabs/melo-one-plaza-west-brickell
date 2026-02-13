@@ -196,12 +196,23 @@
 </div>
 </div>
 <div>
-<form class="space-y-4" onsubmit="event.preventDefault();alert('Thank you! We will contact you soon.');">
-<input type="text" placeholder="Full Name" required class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-primary">
-<input type="email" placeholder="Email" required class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-primary">
-<textarea placeholder="Message" rows="5" required class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-primary"></textarea>
+<form class="space-y-4" id="contactForm">
+<input type="text" id="cf-name" placeholder="Full Name" required class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-primary">
+<input type="email" id="cf-email" placeholder="Email" required class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-primary">
+<textarea id="cf-message" placeholder="Message" rows="5" required class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-primary"></textarea>
 <button type="submit" class="bg-primary hover:bg-primary-dark text-white font-bold px-8 py-3 rounded transition w-full">SEND MESSAGE</button>
 </form>
+<script>
+document.getElementById('contactForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  var n=document.getElementById('cf-name').value;
+  var em=document.getElementById('cf-email').value;
+  var msg=document.getElementById('cf-message').value;
+  var body='Name: '+n+'%0D%0AEmail: '+em+'%0D%0A%0D%0A'+encodeURIComponent(msg);
+  var subject=encodeURIComponent('One Plaza West Brickell Inquiry from '+n);
+  window.location.href='mailto:oneplazarentals@gmail.com?subject='+subject+'&body='+body;
+});
+</script>
 </div>
 </div>
 </section>
